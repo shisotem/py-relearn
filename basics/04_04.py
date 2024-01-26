@@ -47,6 +47,29 @@ def f():
 # f()
 # print('global:', animal)  # dog
 
+"""
+global/nonlocal単純文に関する補足
+"""
+num = 20
+
+
+def outer(num):
+    def inner():
+        # global num  # 20 -> 21 -> 22
+        nonlocal num  # 10 -> 11 -> 12
+        # Neither     # UnboundLocalError
+
+        print(num)
+        num += 1
+
+    return inner
+
+
+f = outer(10)
+f()
+f()
+f()
+
 
 """
 ローカル変数やグローバル変数の出力について
