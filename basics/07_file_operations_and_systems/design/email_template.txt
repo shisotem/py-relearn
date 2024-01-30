@@ -1,0 +1,3 @@
+Hi $name.
+$contests
+Have a nice day.
