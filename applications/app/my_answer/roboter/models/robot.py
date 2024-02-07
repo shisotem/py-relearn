@@ -34,6 +34,9 @@ class RestaurantRobot(Robot):
         super().__init__(name=name)
         self.ranking_model = ranking.RankingModel()
 
+    # _で始まるメソッドや変数 -> プライベートであることを示す
+    # (このメソッドや変数が外部から直接アクセスされるべきではなく、
+    # クラスやモジュールの内部でのみ使用されるべきであるという意味)
     def _hello_decorator(func):
         """Decorator to say a greeting if you are not greeting the user."""
         def wrapper(self):
